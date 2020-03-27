@@ -1,0 +1,135 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://addons/Godot_Test_Runner/TreeUI.gd" type="Script" id=1]
+[ext_resource path="res://addons/Godot_Test_Runner/PopupUI.gd" type="Script" id=2]
+
+[node name="Unit Testing UI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 0.333
+margin_bottom = 0.199997
+rect_min_size = Vector2( 0, 200 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 7.09537, 202.393 ],
+"_edit_use_anchors_": false,
+"_edit_vertical_guides_": [ 10.4969 ]
+}
+
+[node name="Mimic Color" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -13.0
+margin_top = -7.0
+margin_right = 14.0
+margin_bottom = 3.99998
+color = Color( 0.12549, 0.145098, 0.192157, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TabContainer" type="TabContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -5.0
+margin_right = 5.0
+margin_bottom = 35.0
+tab_align = 0
+tabs_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Test Runner" type="Control" parent="TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 8.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Control" type="Control" parent="TabContainer/Test Runner"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -31.0
+rect_clip_content = true
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": "Base size is 1026x168"
+}
+
+[node name="Dictionary" type="Label" parent="TabContainer/Test Runner/Control"]
+anchor_right = 0.081
+anchor_bottom = 0.068
+margin_left = 12.0
+margin_top = -1.0
+margin_right = -0.106003
+margin_bottom = -0.0560007
+text = "Test Folder"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Path" type="LineEdit" parent="TabContainer/Test Runner/Control/Dictionary"]
+anchor_right = 5.978
+margin_left = 89.4036
+margin_top = -0.0807347
+margin_right = -0.0343933
+margin_bottom = 23.9193
+focus_next = NodePath("Panel")
+text = "res://"
+placeholder_text = "res://test"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Panel" type="Panel" parent="TabContainer/Test Runner/Control/Dictionary/Path"]
+anchor_left = 1.021
+anchor_right = 1.188
+margin_left = -0.0350037
+margin_top = 0.698334
+margin_right = 0.0199585
+margin_bottom = 24.6983
+focus_previous = NodePath("..")
+focus_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="TabContainer/Test Runner/Control/Dictionary/Path/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -30.0765
+margin_top = -15.945
+margin_right = 25.9235
+margin_bottom = 8.05504
+focus_previous = NodePath("../..")
+text = "Select"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tree" type="Tree" parent="TabContainer/Test Runner/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 30.0
+columns = 2
+allow_rmb_select = true
+select_mode = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Context" type="PopupPanel" parent="TabContainer/Test Runner/Control/Tree"]
+margin_left = 33.0
+margin_top = 20.0
+margin_right = 73.0
+margin_bottom = 48.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="item_rmb_selected" from="TabContainer/Test Runner/Control/Tree" to="TabContainer/Test Runner/Control/Tree/Context" method="_on_item_right_click"]

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sync-flat.svg-5429d88ee655ac51603a7898a6e87d54.stex"
+path="res://.import/checkmark-flat.svg-eff4c7d5d63f24762549e67cf64c29b1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/UTest/icon/sync-flat.svg"
-dest_files=[ "res://.import/sync-flat.svg-5429d88ee655ac51603a7898a6e87d54.stex" ]
+source_file="res://addons/Godot_Test_Runner/icon/checkmark-flat.svg"
+dest_files=[ "res://.import/checkmark-flat.svg-eff4c7d5d63f24762549e67cf64c29b1.stex" ]
 
 [params]
 
