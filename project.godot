@@ -8,9 +8,14 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node",
+"class": "unit_test",
+"language": "GDScript",
+"path": "res://addons/Godot_Test_Runner/unit_test.gd"
+} ]
 _global_script_class_icons={
-
+"unit_test": ""
 }
 
 [application]

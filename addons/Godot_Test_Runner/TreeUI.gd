@@ -16,7 +16,7 @@ enum file_stack {
 	name,
 	type,
 	stack,
-	test_result
+	#test_result
 }
 
 func _enter_tree():
